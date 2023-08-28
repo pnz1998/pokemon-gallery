@@ -12,6 +12,10 @@ const routes: Routes = [
         loadChildren: () => import('../home/home.module').then(m => m.HomeModule)
       },
       {
+        path: 'gallery',
+        loadChildren: () => import('../gallery/gallery.module').then(m => m.GalleryModule)
+      },
+      {
         path: 'setting',
         loadChildren: () => import('../setting/setting.module').then(m => m.SettingModule)
       },
@@ -30,6 +34,10 @@ const routes: Routes = [
     path: '',
     redirectTo: '/tabs/home',
     pathMatch: 'full'
+  },
+  {
+    path: 'post',
+    loadChildren: () => import('../post/post.module').then(m => m.PostModule)
   }
 ];
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PostComponent } from '../post/post.component';
 
 @Component({
   selector: 'app-home',
@@ -7,21 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent  implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
-  gellery = [
-    { name: "关都地区", class: "g1" },
-    { name: "城都地区", class: "g2" },
-    { name: "丰缘地区", class: "g3" },
-    { name: "神奥地区", class: "g4" },
-    { name: "合众地区", class: "g5" },
-    { name: "卡洛斯地区", class: "g6" },
-    { name: "阿罗拉地区", class: "g7" },
-    { name: "伽勒尔地区", class: "g8" },
-    { name: "洗翠地区", class: "g9" },
-    { name: "帕底亚地区", class: "g10" }
+  component = PostComponent;
+
+  posts = [
+    { title: 'Umbreon', content: 'Umbreon', userId: 'uaena' },
+    { title: 'Umbreon', content: 'Umbreon', userId: 'uaena' },
+    { title: 'Umbreon', content: 'Umbreon', userId: 'uaena' },
+    { title: 'Umbreon', content: 'Umbreon', userId: 'uaena' },
+    { title: 'Umbreon', content: 'Umbreon', userId: 'uaena' },
+    { title: 'Umbreon', content: 'Umbreon', userId: 'uaena' },
   ];
 
   ngOnInit() {}
+
+  goToPost() {
+    this.router.navigate(['/post'])
+  }
 
 }
